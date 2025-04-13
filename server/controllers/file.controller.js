@@ -25,7 +25,7 @@ export const uploadFile = async (req, res) => {
 
         const newFile = await File.create({ originalNames, supabasePaths, expiresAt });
 
-        res.json({ link: `http://localhost:3000/open/${newFile._id}` });
+        res.json({ link: `https://temporary-storage-f.onrender.com/open/${newFile._id}` });
     } catch (err) {
         console.error("Upload error:", err.message);
         res.status(500).json({ error: err.message });
