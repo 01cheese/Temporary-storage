@@ -9,7 +9,7 @@ function Header() {
             <input type="checkbox" id="menu-toggle" className="menu-toggle" />
             <label htmlFor="menu-toggle" className="burger">&#9776;</label>
             <nav className="nav">
-                <a href="http://localhost:3000">Main</a>
+                <a href="https://drive.vzbb.site/">Main</a>
                 <a href="#">About Project</a>
                 <a href="#">GitHub</a>
             </nav>
