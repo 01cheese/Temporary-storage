@@ -1,0 +1,131 @@
+:root {
+    /* Основна палітра */
+    --color-background: #eae6df;
+    --color-header-bg: #ded9d1;
+    --color-form-bg: #f3f1ed;
+
+    --color-text: #1f2d2f;
+    --color-link: #1f2d2f;
+
+    --color-accent: #2B7A78;
+    --color-accent-light: #3C9A8D;
+    --color-accent-dark: #1E5E5A;
+
+    --color-shadow: #D4A648;
+
+    /* Ефекти та секції */
+    --color-border: #b0a89f;
+    --color-highlight-bg: #e6f0ed;
+    --color-section-light: #fdfaf6;
+    --color-section-dark: #d6d1ca;
+
+    /* Кнопки */
+    --color-button-bg: var(--color-accent);
+    --color-button-hover: var(--color-accent-dark);
+    --color-button-text: #ffffff;
+
+    /* Статусні кольори */
+    --color-success: #4CAF50;
+    --color-error: #E74C3C;
+    --color-warning: #F39C12;
+    --color-info: #3498DB;
+
+    /* Toast / alerts */
+    --color-toast-bg: #ffffff;
+    --color-toast-shadow: rgba(0, 0, 0, 0.1);
+    --color-toast-border: #ddd;
+
+    /* Логотип і навігація */
+    --color-logo-highlight: #2B7A78;
+    --color-nav-underline: #2B7A78;
+}
+
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 24px;
+    background: var(--color-header-bg);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: var(--color-text);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo a {
+    font-size: 2.2vh;
+    font-weight: 900;
+    color: var(--color-text);
+    text-decoration: none;
+}
+
+.logo .vz {
+    color: var(--color-logo-highlight);
+}
+
+.nav {
+    display: flex;
+    gap: 20px;
+}
+
+.nav a {
+    font-size: 1.8vh;
+    font-weight: 700;
+    color: var(--color-text);
+    text-decoration: none;
+    position: relative;
+}
+
+.nav a::after {
+    content: "";
+    display: block;
+    width: 0%;
+    height: 2px;
+    background: var(--color-nav-underline);
+    transition: 0.3s;
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+}
+
+.nav a:hover::after {
+    width: 100%;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+.burger {
+    display: none;
+    font-size: 2.5vh;
+    cursor: pointer;
+    color: var(--color-text);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .nav {
+        display: none;
+        flex-direction: column;
+        background: var(--color-header-bg);
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        text-align: center;
+        padding: 20px 0;
+        border-top: 2px solid var(--color-nav-underline);
+    }
+
+    .menu-toggle:checked + .burger + .nav {
+        display: flex;
+    }
+
+    .burger {
+        display: block;
+    }
+}

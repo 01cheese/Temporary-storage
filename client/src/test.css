@@ -1,0 +1,46 @@
+.dropzone-container {
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+.dropzone {
+    border: 2px dashed #aaa;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.dropzone.active {
+    background-color: #e3f2fd;
+    border-color: #2196f3;
+}
+
+.file-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+}
+
+.file-list li {
+    background: #fff;
+    margin-bottom: 8px;
+    padding: 8px 12px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.delete-btn {
+    background: none;
+    border: none;
+    color: red;
+    font-size: 16px;
+    cursor: pointer;
+}
