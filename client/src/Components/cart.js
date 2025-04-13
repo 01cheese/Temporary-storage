@@ -43,7 +43,7 @@ const FlipCard = () => {
         formData.append("ttl", TTL);
 
         try {
-            const res = await fetch("http://localhost:5000/api/files/upload", {
+            const res = await fetch("https://temporary-storage.onrender.com/api/files/upload", {
                 method: "POST",
                 body: formData,
             });
