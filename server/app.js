@@ -9,8 +9,9 @@ import cors from "cors";
 dotenv.config();
 
 const app = express();
+const PORT = process.env.PORT || 5000;
 app.use(cors({
-    origin: "http://localhost:3000" // або process.env.CLIENT_ORIGIN
+    origin: "https://temporary-storage-f.onrender.com/" // або process.env.CLIENT_ORIGIN
 }));
 app.use(express.json());
 
@@ -39,4 +40,4 @@ setInterval(async () => {
     }
 }, 1000 * 60*5); // 5 min
 
-app.listen(5000, () => console.log("Server running on port 5000"));
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
