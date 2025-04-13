@@ -6,9 +6,9 @@ dotenv.config();
 const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_KEY);
 
 export const uploadToSupabase = async (file) => {
-    const cleanName = file.originalname.normalize("NFD").replace(/[\u0300-\u036f]/g, "") // прибирає діакритику
-        .replace(/[^\x00-\x7F]/g, "") // прибирає нелатинські символи
-        .replace(/\s+/g, "_"); // пробіли → підкреслення
+    const cleanName = file.originalname.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+        .replace(/[^\x00-\x7F]/g, "")
+        .replace(/\s+/g, "_");
 
     const filename = `${Date.now()}-${cleanName}`;
 
@@ -29,7 +29,6 @@ export const getSupabaseUrl = async (path, ttlInSeconds = process.env.TTL_IN_SEC
     return data.signedUrl;
 };
 
-// 👉🏻 Ось ця функція для видалення файлів
 export const deleteFromSupabase = async (path) => {
     const { error } = await supabase.storage.from("files").remove([path]);
     if (error) throw error;
