@@ -12,7 +12,7 @@ const OpenLink = () => {
     const [remainingTime, setRemainingTime] = useState(0);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/api/files/check/${id}`)
+        fetch(`https://temporary-storage.onrender.com/api/files/check/${id}`)
             .then((res) => res.json())
             .then((data) => {
                 if (data.valid) {
@@ -104,7 +104,7 @@ const OpenLink = () => {
                 }
                 </p>
                 <a
-                    href={`http://localhost:5000/api/files/${id}/zip`}
+                    href={`https://temporary-storage.onrender.com/api/files/${id}/zip`}
                     className="btn"
                     style={{ marginTop: '1rem', display: 'inline-block' }}
                 >
@@ -119,7 +119,7 @@ const OpenLink = () => {
                                 <li key={index}>
                                     <span className="file-name">📄 {name}</span>
                                     <a
-                                        href={`http://localhost:5000/api/files/${id}?index=${index}`}
+                                        href={`https://temporary-storage.onrender.com/api/files/${id}?index=${index}`}
                                         className="btn"
                                     >
                                         Download
