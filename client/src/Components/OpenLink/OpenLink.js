@@ -103,6 +103,14 @@ const OpenLink = () => {
                             : `${remainingTime}s`
                 }
                 </p>
+                <a
+                    href={`http://localhost:5000/api/files/${id}/zip`}
+                    className="btn"
+                    style={{ marginTop: '1rem', display: 'inline-block' }}
+                >
+                    ⬇️ Download all as ZIP
+                </a>
+
 
                 <form action="">
                     <div className="form_group">
